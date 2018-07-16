@@ -3,16 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Pokedex</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
     <div id="the-view">
         <div id="the-dex">
+            <div id="search-bar">
+                <input class="search-input" id="global-search" type="search" placeholder="Search by name...">
+                <button id="search-button" class="button search-button" type="button">
+                        <img id="pokeball-button-image" src="pokeball.png" width="19" height="19">
+                </button>
+            </div>
         </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>=
+    <script src="main.js"></script>
 </body>
 </html>

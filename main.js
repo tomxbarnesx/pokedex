@@ -11,11 +11,9 @@ class Trainer {
 let TashKetchum = new Trainer();
 
 class Pokemon {
-    constructor(name, avatar, type1, type2, hp, attack, defense, abilities) {
-        this.name = name;
+    constructor(name, avatar, hp, attack, defense, abilities) {
+        this.name = name.charAt(0).toUpperCase() + name.slice(1);
         this.avatar = avatar;
-        this.type1 = type1;
-        this.type2 = type2;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
@@ -23,7 +21,22 @@ class Pokemon {
     }
 }
 
-axios.get("http://api.openweathermap.org/data/2.5/weather?zip=" + searchInput + ",us&id=524901&APPID=5e1d3af2a4608603007bf841e72537a7").then((response) => {
-    data = response.data;
+let searchButton = document.getElementById("search-button");
 
-http://pokeapi.co/api/v2/
+searchButton.addEventListener("click", (event) => {
+    let searchInput = document.getElementsByClassName("search-input")[0].value;
+    
+    axios.get("https://pokeapi.co/api/v2/pokemon/" + searchInput + "/").then((response) => {
+    data = response.data;
+    // console.log(data);
+    let newPoke = new Pokemon (
+        data.name,
+        data.sprites.front_default,
+        data.stats[5].base_stat,
+        data.stats[4].base_stat,
+        data.stats[3].base_stat,
+        [data.abilities[0].ability.name, data.abilities[1].ability.name]
+    )
+    console.log(newPoke);
+    })
+});
