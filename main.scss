@@ -123,6 +123,8 @@ div:hover {
 }
 
 //STAT-PANE
-#stats-pane {
-
+#stats-pane-frame {
+    width: 30em;
+    height: 20em;
+    background-image: $background-image;
 }

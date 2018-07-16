@@ -90,4 +90,9 @@ div:hover {
     .expanding-search-form .button:hover {
       background-color: #51475b; }
 
+#stats-pane-frame {
+  width: 30em;
+  height: 20em;
+  background-image: url("stone2.png"); }
+
 /*# sourceMappingURL=main.css.map */
