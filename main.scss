@@ -3,12 +3,20 @@ body {
     height: 100%;
     background-color: black;
     margin: 0px;
+    font-family: 'Press Start 2P', cursive;
+
 }
 
 $brand-color: #6A5D78;
+$screen-color: rgb(185, 200, 209);
 $input-height: 34px;
-$border-radius: 3px;
+$border-radius: 5px;
 $border-color: #999;
+$background-image: url("stone2.png");
+
+div:hover {
+    border: red dotted 5px;
+}
 
 #the-view {
     width: 100%;
@@ -21,36 +29,100 @@ $border-color: #999;
     background-size: cover;
 }
 
-#pokeball-button-image {
-    padding-top: .3em;
+#the-dex {
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+    padding-top: 10em;
+}
+
+//Avatar-Screen + Header
+#avatar-frame {
+    width: 24em;
+    height: 24em;
+    background-image: $background-image;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    #avatar-screen {
+        width: 22em;
+        height: 22em;
+        background-color: $screen-color;
+    }
+}
+
+#poke-name-frame {
+    width: 24em;
+    height: 4em;
+    background-image: $background-image;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+
+    #poke-name-screen {
+        width: 23em;
+        height: 3em;
+        background-color: $screen-color;
+    }
+
+    #poke-name {
+        line-height: .4em;
+        text-align: center;
+    }
+}
+
+//Search-Bar & Stats
+
+#search-bar {
+    width: 300px;
+    background-image: $background-image;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    // padding-right: 5em;
 }
 
 .expanding-search-form {
+    padding-left: 5px;
 
     .search-input {
-      display: inline-block;
-        height: $input-height;
-      width: 220px;
-      float: left;
-      border: 0;
-      font-size: 16px;
-      z-index: 2;
-      border-radius: 0;
+    display: inline-block;
+    float: left;
+    height: $input-height;
+    width: 250px;
+    border: 0;
+    font-size: 16px;
+    z-index: 2;
+    border-radius: 0;
+    padding-left: 2px;
+    background-color: $screen-color;
+    font-family: 'Press Start 2P', cursive;
     }
     
     .button {
-      position: relative;
-      top: 0;
-      display: inline-block;
-      float: left;
-      padding: 0 10px;
-      color: #fff;
-      border: 1px solid transparent;
-      background-color: $brand-color;
-      text-align: center;
+    height: $input-height;
+    display: inline-block;
+    float: left;
+    top: 0;
+    padding: 0 10px;
+    color: #fff;
+    border: 1px solid transparent;
+    background-image: $background-image;
+    text-align: center;
       
       &:hover {
         background-color: darken($brand-color, 10%);
         }
     }
+}
+
+//STAT-PANE
+#stats-pane {
+
 }
