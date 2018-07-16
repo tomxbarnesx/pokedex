@@ -80,9 +80,9 @@ div:hover {
 //Search-Bar & Stats
 
 #search-bar {
-    width: 300px;
+    width: 330px;
     background-image: $background-image;
-    height: 44px;
+    height: 50px;
     display: flex;
     align-items: center;
     // padding-right: 5em;
@@ -95,7 +95,7 @@ div:hover {
     display: inline-block;
     float: left;
     height: $input-height;
-    width: 250px;
+    width: 280px;
     border: 0;
     font-size: 16px;
     z-index: 2;
@@ -124,7 +124,60 @@ div:hover {
 
 //STAT-PANE
 #stats-pane-frame {
+    margin-top: 1em;
     width: 30em;
-    height: 20em;
+    height: 18em;
     background-image: $background-image;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: $border-radius;
+
+    #ability-screen-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 95%;
+    
+        .ability-screen {
+            height: $input-height;
+            background-color: $screen-color;
+            width: 12em;
+            // margin-top: 1em;
+        }
+    }
+
+    #stat-bar-screen {
+        width: 26.25em;
+        height: 12em;
+        background-color: $screen-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .stat-bar {
+            padding-left: 1em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: 0;
+
+            .stat-name {
+                margin: .5em 0em;
+                width: 3.5em;
+                text-align: center;
+            }
+
+            .full-bar{
+                background-color: black;
+                height: 5px;
+                width: 19em;
+
+                .bar-fill{
+                    background-color: black;
+                }
+            }
+        }
+    }   
 }

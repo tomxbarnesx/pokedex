@@ -57,9 +57,9 @@ div:hover {
     text-align: center; }
 
 #search-bar {
-  width: 300px;
+  width: 330px;
   background-image: url("stone2.png");
-  height: 44px;
+  height: 50px;
   display: flex;
   align-items: center; }
 
@@ -69,7 +69,7 @@ div:hover {
     display: inline-block;
     float: left;
     height: 34px;
-    width: 250px;
+    width: 280px;
     border: 0;
     font-size: 16px;
     z-index: 2;
@@ -91,8 +91,46 @@ div:hover {
       background-color: #51475b; }
 
 #stats-pane-frame {
+  margin-top: 1em;
   width: 30em;
-  height: 20em;
-  background-image: url("stone2.png"); }
+  height: 18em;
+  background-image: url("stone2.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px; }
+  #stats-pane-frame #ability-screen-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 95%; }
+    #stats-pane-frame #ability-screen-wrapper .ability-screen {
+      height: 34px;
+      background-color: #b9c8d1;
+      width: 12em; }
+  #stats-pane-frame #stat-bar-screen {
+    width: 26.25em;
+    height: 12em;
+    background-color: #b9c8d1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+    #stats-pane-frame #stat-bar-screen .stat-bar {
+      padding-left: 1em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: 0; }
+      #stats-pane-frame #stat-bar-screen .stat-bar .stat-name {
+        margin: .5em 0em;
+        width: 3.5em;
+        text-align: center; }
+      #stats-pane-frame #stat-bar-screen .stat-bar .full-bar {
+        background-color: black;
+        height: 5px;
+        width: 19em; }
+        #stats-pane-frame #stat-bar-screen .stat-bar .full-bar .bar-fill {
+          background-color: black; }
 
 /*# sourceMappingURL=main.css.map */
