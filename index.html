@@ -6,17 +6,56 @@
     <title>Pokedex</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
     <div id="the-view">
         <div id="the-dex">
-            <div id="search-bar">
-                <form class="expanding-search-form">
-                    <input class="search-input" id="global-search" type="search" placeholder="Search by name...">
-                    <button id="search-button" class="button search-button" type="button">
-                            <img id="pokeball-button-image" src="pokeball.png" width="19" height="19">
-                    </button>
-                </form>
+            <div id="view-column">
+                <div id="avatar-frame">
+                    <div id="avatar-screen">
+                    </div>
+                </div>
+                <div id="poke-name-frame">
+                    <div id="poke-name-screen">
+                        <h1 id="poke-name">Vileplume</h1> 
+                    </div>
+                </div>
+            </div>
+            <div id="search-stats-column">
+                <div id="search-bar">
+                    <form class="expanding-search-form">
+                        <input class="search-input" id="global-search" type="search" placeholder="Search by name">
+                        <button id="search-button" class="button search-button" type="button">
+                                <img id="pokeball-button-image" src="pokeballalt.png" width="23" height="23">
+                        </button>
+                    </form>
+                </div>
+                <div id="stats-pane-frame">
+                    <div id="stats-screen">
+                        <div class="stat-bar hp">
+                            <h2>HP</h2>
+                            <div class="full-bar">
+                                <div class="bar-fill">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="stat-bar attack">
+                            <h2>ATK</h2>
+                            <div class="full-bar">
+                                <div class="bar-fill">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="stat-bar defense">
+                            <h2>DEF</h2>
+                            <div class="full-bar">
+                                <div class="bar-fill">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
