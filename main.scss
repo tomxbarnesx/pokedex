@@ -1,15 +1,56 @@
 body {
     width: 100%;
     height: 100%;
+    background-color: black;
+    margin: 0px;
 }
+
+$brand-color: #6A5D78;
+$input-height: 34px;
+$border-radius: 3px;
+$border-color: #999;
 
 #the-view {
     width: 100%;
-    height: 100%;
+    height: 800px;
     display: flex;
     justify-content: center;
+    background-image: url("green-wall-crop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #pokeball-button-image {
     padding-top: .3em;
+}
+
+.expanding-search-form {
+
+    .search-input {
+      display: inline-block;
+        height: $input-height;
+      width: 220px;
+      float: left;
+      border: 0;
+      font-size: 16px;
+      z-index: 2;
+      border-radius: 0;
+    }
+    
+    .button {
+      position: relative;
+      top: 0;
+      display: inline-block;
+      float: left;
+      padding: 0 10px;
+      color: #fff;
+      border: 1px solid transparent;
+      background-color: $brand-color;
+      text-align: center;
+      
+      &:hover {
+        background-color: darken($brand-color, 10%);
+        }
+    }
 }

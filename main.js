@@ -2,6 +2,10 @@ class Trainer {
     constructor (){
         this.party = [];
     }
+
+    all() {
+        console.log(this.party);
+    }
     
     add(poke) {
         this.party.push(poke);
@@ -23,10 +27,24 @@ class Pokemon {
 
 let searchButton = document.getElementById("search-button");
 
+axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
+    data = response.data;
+    let newPoke = new Pokemon (
+        data.name,
+        data.sprites.front_default,
+        data.stats[5].base_stat,
+        data.stats[4].base_stat,
+        data.stats[3].base_stat,
+        [data.abilities[0].ability.name, data.abilities[1].ability.name]
+    )
+    TashKetchum.add(newPoke);
+});
+
+
 searchButton.addEventListener("click", (event) => {
     let searchInput = document.getElementsByClassName("search-input")[0].value;
     
-    axios.get("https://pokeapi.co/api/v2/pokemon/" + searchInput + "/").then((response) => {
+    axios.get("https://pokeapi.co/api/v2/pokemon/" + searchInput.toLowerCase() + "/").then((response) => {
     data = response.data;
     // console.log(data);
     let newPoke = new Pokemon (
@@ -37,6 +55,7 @@ searchButton.addEventListener("click", (event) => {
         data.stats[3].base_stat,
         [data.abilities[0].ability.name, data.abilities[1].ability.name]
     )
-    console.log(newPoke);
+    TashKetchum.add(newPoke);
+    TashKetchum.all();
     })
 });
