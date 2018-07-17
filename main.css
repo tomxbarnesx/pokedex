@@ -91,7 +91,7 @@ body {
 
 #stats-pane-frame {
   margin-top: 1em;
-  width: 30em;
+  width: 31em;
   height: 19.85em;
   background-image: url("stone2.png");
   display: flex;
@@ -110,11 +110,11 @@ body {
     #stats-pane-frame #ability-screen-wrapper .ability-screen {
       height: 34px;
       background-color: #d1d4c9;
-      width: 13em;
+      width: 14em;
       line-height: .4em;
       text-align: center; }
   #stats-pane-frame #stat-bar-screen {
-    width: 27.25em;
+    width: 28.7em;
     height: 9em;
     background-color: #d1d4c9;
     display: flex;
@@ -133,10 +133,25 @@ body {
       #stats-pane-frame #stat-bar-screen .stat-bar .full-bar {
         background-color: black;
         height: 5px;
-        width: 20em; }
+        width: 21em;
+        display: flex;
+        flex-direction: row;
+        justify-content: end; }
+        #stats-pane-frame #stat-bar-screen .stat-bar .full-bar .animating-bar {
+          background-color: #24be16;
+          height: 5px;
+          width: 100%; }
         #stats-pane-frame #stat-bar-screen .stat-bar .full-bar .bar-fill {
-          background-color: green;
+          background-color: black;
           height: 5px;
           width: 10em; }
+        #stats-pane-frame #stat-bar-screen .stat-bar .full-bar .filling {
+          animation: fill-zoom 2s forwards; }
+
+@keyframes fill-zoom {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */

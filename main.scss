@@ -127,7 +127,7 @@ $background-image: url("stone2.png");
 //STAT-PANE
 #stats-pane-frame {
     margin-top: 1em;
-    width: 30em;
+    width: 31em;
     height: 19.85em;
     background-image: $background-image;
     display: flex;
@@ -151,7 +151,7 @@ $background-image: url("stone2.png");
         .ability-screen {
             height: $input-height;
             background-color: $screen-color;
-            width: 13em;
+            width: 14em;
             line-height: .4em;
             text-align: center;
             // margin-top: 1em;
@@ -159,7 +159,7 @@ $background-image: url("stone2.png");
     }
 
     #stat-bar-screen {
-        width: 27.25em;
+        width: 28.7em;
         height: 9em;
         background-color: $screen-color;
         display: flex;
@@ -182,14 +182,37 @@ $background-image: url("stone2.png");
             .full-bar{
                 background-color: black;
                 height: 5px;
-                width: 20em;
+                width: 21em;
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+
+                .animating-bar{
+                    background-color: #24be16;
+                    height: 5px;
+                    width: 100%;
+                    // animation: fill-zoom 2s forwards;
+                }
 
                 .bar-fill{
-                    background-color: green;
+                    background-color: black;
                     height: 5px;
                     width: 10em;
+                }
+
+                .filling {
+                    animation: fill-zoom 2s forwards;
                 }
             }
         }
     }   
+}
+
+@keyframes fill-zoom {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }
