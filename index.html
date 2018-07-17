@@ -14,11 +14,12 @@
             <div id="view-column">
                 <div id="avatar-frame">
                     <div id="avatar-screen">
+                        <img id="avatar" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png" height="350" width="350">
                     </div>
                 </div>
                 <div id="poke-name-frame">
                     <div id="poke-name-screen">
-                        <h1 id="poke-name">Vileplume</h1> 
+                        <h1 id="poke-name"></h1> 
                     </div>
                 </div>
             </div>
@@ -27,19 +28,21 @@
                     <form class="expanding-search-form">
                         <input class="search-input" id="global-search" type="search" placeholder="Search by name">
                         <button id="search-button" class="button search-button" type="button">
-                                <img id="pokeball-button-image" src="pokeballalt.png" width="23" height="23">
+                            <img id="pokeball-button-image" src="pokeballalt.png" width="23" height="23">
                         </button>
                     </form>
                 </div>
                 <div id="stats-pane-frame">
+                    <h3 class="stat-header">Abilities:</h3>
                     <div id="ability-screen-wrapper">
                         <div class="ability-screen">
-
+                            <p class="ability-display"></p>
                         </div>
                         <div class="ability-screen">
-
+                            <p class="ability-display"></p>
                         </div>
                     </div>
+                    <h3 class="stat-header">Stats:</h3>
                     <div id="stat-bar-screen">
                         <div class="stat-bar hp">
                             <h2 class="stat-name">HP </h2>

@@ -12,7 +12,7 @@ class Trainer {
     }
 }
 
-let TashKetchum = new Trainer();
+let PokeTom = new Trainer();
 
 class Pokemon {
     constructor(name, avatar, hp, attack, defense, abilities) {
@@ -27,7 +27,8 @@ class Pokemon {
 
 let searchButton = document.getElementById("search-button");
 
-axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
+// axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/")
+axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/45.json").then((response) => {
     data = response.data;
     let newPoke = new Pokemon (
         data.name,
@@ -35,27 +36,67 @@ axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
         data.stats[5].base_stat,
         data.stats[4].base_stat,
         data.stats[3].base_stat,
-        [data.abilities[0].ability.name, data.abilities[1].ability.name]
+        // [data.abilities[0].ability.name, data.abilities[1].ability.name]
+        [data.abilities[0].ability.name.charAt(0).toUpperCase() + data.abilities[0].ability.name.slice(1), data.abilities[1].ability.name.charAt(0).toUpperCase() + data.abilities[1].ability.name.slice(1)]
     )
-    TashKetchum.add(newPoke);
+    PokeTom.add(newPoke);
+    let pokeNameDisplay = document.getElementById("poke-name");
+    pokeNameDisplay.innerText = PokeTom.party[PokeTom.party.length - 1].name;
+
+    let avatarDisplay = document.getElementById("avatar");
+    avatarDisplay.src = PokeTom.party[PokeTom.party.length - 1].avatar;
+
+    let abilityDisplay1 = document.getElementsByClassName("ability-display")[0];
+    let abilityDisplay2 = document.getElementsByClassName("ability-display")[1];
+    abilityDisplay1.innerText = PokeTom.party[PokeTom.party.length - 1].abilities[0];
+    abilityDisplay2.innerText = PokeTom.party[PokeTom.party.length - 1].abilities[1];
 });
 
 
 searchButton.addEventListener("click", (event) => {
     let searchInput = document.getElementsByClassName("search-input")[0].value;
     
-    axios.get("https://pokeapi.co/api/v2/pokemon/" + searchInput.toLowerCase() + "/").then((response) => {
+    // axios.get("https://pokeapi.co/api/v2/pokemon/" + searchInput.toLowerCase() + "/")
+    axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/" + searchInput + ".json").then((response) => {
     data = response.data;
     // console.log(data);
-    let newPoke = new Pokemon (
-        data.name,
-        data.sprites.front_default,
-        data.stats[5].base_stat,
-        data.stats[4].base_stat,
-        data.stats[3].base_stat,
-        [data.abilities[0].ability.name, data.abilities[1].ability.name]
-    )
-    TashKetchum.add(newPoke);
-    TashKetchum.all();
+    if (data.abilities.length > 1){
+        let newPoke = new Pokemon (
+            data.name,
+            data.sprites.front_default,
+            data.stats[5].base_stat,
+            data.stats[4].base_stat,
+            data.stats[3].base_stat,
+            [data.abilities[0].ability.name, data.abilities[1].ability.name]
+        )
+
+        PokeTom.add(newPoke);
+        PokeTom.all();
+    } else {
+        let newPoke = new Pokemon (
+            data.name,
+            data.sprites.front_default,
+            data.stats[5].base_stat,
+            data.stats[4].base_stat,
+            data.stats[3].base_stat,
+            [data.abilities[0].ability.name]
+        )
+
+        PokeTom.add(newPoke);
+        PokeTom.all();
+    }
+
+    let pokeNameDisplay = document.getElementById("poke-name");
+    pokeNameDisplay.innerText = PokeTom.party[PokeTom.party.length - 1].name;
+
+    let avatarDisplay = document.getElementById("avatar");
+    avatarDisplay.src = PokeTom.party[PokeTom.party.length - 1].avatar;
+
+    let abilityDisplay1 = document.getElementsByClassName("ability-display")[0];
+    let abilityDisplay2 = document.getElementsByClassName("ability-display")[1];
+    abilityDisplay1.innerText = PokeTom.party[PokeTom.party.length - 1].abilities[0];
+    abilityDisplay2.innerText = PokeTom.party[PokeTom.party.length - 1].abilities[1];
+
+
     })
 });

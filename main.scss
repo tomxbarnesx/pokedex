@@ -8,15 +8,15 @@ body {
 }
 
 $brand-color: #6A5D78;
-$screen-color: rgb(185, 200, 209);
+$screen-color: #d1d4c9;
 $input-height: 34px;
 $border-radius: 5px;
 $border-color: #999;
 $background-image: url("stone2.png");
 
-div:hover {
-    border: red dotted 5px;
-}
+// div:hover {
+//     border: red dotted 5px;
+// }
 
 #the-view {
     width: 100%;
@@ -33,7 +33,7 @@ div:hover {
     display: flex;
     width: 65%;
     justify-content: space-between;
-    padding-top: 10em;
+    padding-top: 11em;
 }
 
 //Avatar-Screen + Header
@@ -50,7 +50,7 @@ div:hover {
     #avatar-screen {
         width: 22em;
         height: 22em;
-        background-color: $screen-color;
+        background-image: url("grid.png");
     }
 }
 
@@ -85,6 +85,7 @@ div:hover {
     height: 50px;
     display: flex;
     align-items: center;
+    border-radius: $border-radius;
     // padding-right: 5em;
 }
 
@@ -115,6 +116,7 @@ div:hover {
     border: 1px solid transparent;
     background-image: $background-image;
     text-align: center;
+    cursor: pointer;
       
       &:hover {
         background-color: darken($brand-color, 10%);
@@ -126,13 +128,19 @@ div:hover {
 #stats-pane-frame {
     margin-top: 1em;
     width: 30em;
-    height: 18em;
+    height: 19.85em;
     background-image: $background-image;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     border-radius: $border-radius;
+
+    .stat-header{
+        margin: 0em;
+        color: $screen-color;
+        // -webkit-text-stroke: black .1px;
+    }
 
     #ability-screen-wrapper {
         display: flex;
@@ -143,14 +151,16 @@ div:hover {
         .ability-screen {
             height: $input-height;
             background-color: $screen-color;
-            width: 12em;
+            width: 13em;
+            line-height: .4em;
+            text-align: center;
             // margin-top: 1em;
         }
     }
 
     #stat-bar-screen {
-        width: 26.25em;
-        height: 12em;
+        width: 27.25em;
+        height: 9em;
         background-color: $screen-color;
         display: flex;
         flex-direction: column;
@@ -164,7 +174,7 @@ div:hover {
             border: 0;
 
             .stat-name {
-                margin: .5em 0em;
+                margin: 0em;
                 width: 3.5em;
                 text-align: center;
             }
@@ -172,10 +182,12 @@ div:hover {
             .full-bar{
                 background-color: black;
                 height: 5px;
-                width: 19em;
+                width: 20em;
 
                 .bar-fill{
-                    background-color: black;
+                    background-color: green;
+                    height: 5px;
+                    width: 10em;
                 }
             }
         }
