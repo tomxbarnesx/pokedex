@@ -25,6 +25,8 @@ class Pokemon {
     }
 }
 
+
+//RENDER FUNCTION
 // let targetPoke = PokeTom.party.length - 1;
 
 let render = (targetPoke) => {
@@ -61,6 +63,9 @@ let render = (targetPoke) => {
         DEFAnimation.classList.remove("filling");}, 2000);
 }
 
+
+//INITIALIZATION
+
 let searchButton = document.getElementById("search-button");
 
 // axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/")
@@ -80,6 +85,8 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/45.json").then((response
     render(targetPoke);
 });
 
+
+//SEARCH
 
 searchButton.addEventListener("click", (event) => {
     let searchInput = document.getElementsByClassName("search-input")[0].value;
@@ -117,23 +124,36 @@ searchButton.addEventListener("click", (event) => {
     let targetPoke = PokeTom.party.length - 1;
     render(targetPoke);
 
+    let current = PokeTom.party.length - 1;
+
+    toggleLeft.addEventListener("click", (event) => {
+        current--;
+        render(current);
+    });
+    
+    toggleRight.addEventListener("click", (event) => {
+        current++;
+        render(current);
+    });
+
     })
 });
 
-let toggleLeft = document.getElementsByClassName("toggle-arrow")[0];
-let toggleRight = document.getElementsByClassName("toggle-arrow")[1];
+//TOGGLES
 
-let counter = 2;
+// let toggleLeft = document.getElementsByClassName("toggle-arrow")[0];
+// let toggleRight = document.getElementsByClassName("toggle-arrow")[1];
 
-toggleLeft.addEventListener("click", (event) => {
-    let targetPoke = PokeTom.party.length - counter;
-    render(targetPoke);
-    counter++;
-});
+// let current = PokeTom.party.length - 1;
 
-//Still slightly broken
-toggleRight.addEventListener("click", (event) => {
-    let targetPoke = PokeTom.party.length + counter;
-    render(targetPoke);
-    counter--;
-});
+// toggleLeft.addEventListener("click", (event) => {
+//     current--;
+//     render(current);
+// });
+
+// toggleRight.addEventListener("click", (event) => {
+//     current++;
+//     render(current);
+// });
+
+//indexOf ++ // --
