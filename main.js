@@ -25,31 +25,31 @@ class Pokemon {
     }
 }
 
-let targetPoke = PokeTom.party.length - 1;
+// let targetPoke = PokeTom.party.length - 1;
 
-let render = () => {
+let render = (targetPoke) => {
     let pokeNameDisplay = document.getElementById("poke-name");
-    pokeNameDisplay.innerText = PokeTom.party[PokeTom.party.length - 1].name;
+    pokeNameDisplay.innerText = PokeTom.party[targetPoke].name;
 
     let avatarDisplay = document.getElementById("avatar");
-    avatarDisplay.src = PokeTom.party[PokeTom.party.length - 1].avatar;
+    avatarDisplay.src = PokeTom.party[targetPoke].avatar;
 
     let abilityDisplay1 = document.getElementsByClassName("ability-display")[0];
     let abilityDisplay2 = document.getElementsByClassName("ability-display")[1];
-    abilityDisplay1.innerText = PokeTom.party[PokeTom.party.length - 1].abilities[0];
-    abilityDisplay2.innerText = PokeTom.party[PokeTom.party.length - 1].abilities[1];
+    abilityDisplay1.innerText = PokeTom.party[targetPoke].abilities[0];
+    abilityDisplay2.innerText = PokeTom.party[targetPoke].abilities[1];
 
     let HPBar = document.getElementsByClassName("bar-fill")[0];
     let HPAnimation = document.getElementsByClassName("animating-bar")[0];
-    HPBar.style.width = String(((255 - PokeTom.party[PokeTom.party.length - 1].hp) / 255) * 100) + "%";
+    HPBar.style.width = String(((255 - PokeTom.party[targetPoke].hp) / 255) * 100) + "%";
 
     let ATKBar = document.getElementsByClassName("bar-fill")[1];
     let ATKAnimation = document.getElementsByClassName("animating-bar")[1];
-    ATKBar.style.width = String(((190 - PokeTom.party[PokeTom.party.length - 1].hp) / 190) * 100) + "%";
+    ATKBar.style.width = String(((190 - PokeTom.party[targetPoke].hp) / 190) * 100) + "%";
 
     let DEFBar = document.getElementsByClassName("bar-fill")[2];
     let DEFAnimation = document.getElementsByClassName("animating-bar")[2];
-    DEFBar.style.width = String(((230 - PokeTom.party[PokeTom.party.length - 1].hp) / 230) * 100) + "%";
+    DEFBar.style.width = String(((230 - PokeTom.party[targetPoke].hp) / 230) * 100) + "%";
 
     HPAnimation.classList.add("filling");
     ATKAnimation.classList.add("filling");
@@ -76,7 +76,8 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/45.json").then((response
     )
     PokeTom.add(newPoke);
 
-    render();
+    let targetPoke = PokeTom.party.length - 1;
+    render(targetPoke);
 });
 
 
@@ -113,7 +114,8 @@ searchButton.addEventListener("click", (event) => {
         PokeTom.all();
     }
 
-    render();
+    let targetPoke = PokeTom.party.length - 1;
+    render(targetPoke);
 
     })
 });
@@ -121,9 +123,17 @@ searchButton.addEventListener("click", (event) => {
 let toggleLeft = document.getElementsByClassName("toggle-arrow")[0];
 let toggleRight = document.getElementsByClassName("toggle-arrow")[1];
 
-// toggleLeft.addEventListener("click", (event) => {
-    
-// });
+let counter = 2;
 
+toggleLeft.addEventListener("click", (event) => {
+    let targetPoke = PokeTom.party.length - counter;
+    render(targetPoke);
+    counter++;
+});
 
-// toggleRight.addEventListener();
+//Still slightly broken
+toggleRight.addEventListener("click", (event) => {
+    let targetPoke = PokeTom.party.length + counter;
+    render(targetPoke);
+    counter--;
+});
