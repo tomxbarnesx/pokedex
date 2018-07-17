@@ -97,6 +97,8 @@ searchButton.addEventListener("click", (event) => {
     abilityDisplay1.innerText = PokeTom.party[PokeTom.party.length - 1].abilities[0];
     abilityDisplay2.innerText = PokeTom.party[PokeTom.party.length - 1].abilities[1];
 
-
+    // let HPBar = document.getElementsByClassName("stat-bar")[0];
+    // let ATKBar = document.getElementsByClassName("stat-bar")[1];
+    // let DEFBar = document.getElementsByClassName("stat-bar")[2];
     })
 });
