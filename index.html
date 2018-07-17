@@ -10,6 +10,9 @@
 </head>
 <body>
     <div id="the-view">
+        <!-- <iframe src="jungle_atmosphere_afternoon.ogg" allow="autoplay"></iframe> -->
+        <audio id="toggle-beep" src="beep.wav"></audio>
+        <audio id="search-beep" src="search.wav"></audio>
         <div id="the-dex">
             <section id="view-column">
                 <div id="avatar-frame">
@@ -24,16 +27,16 @@
                 </div>
                 <div id="toggler">
                     <div class="toggle-frame">
-                        <div class="toggle-arrow"><h2>&#8678;</h2></div> 
+                        <h1 class="toggle-arrow">&#8666;</h1>
                     </div>
                     <div class="toggle-frame">
-                        <div class="toggle-arrow"><h2>&#8680;</h2></div>
+                        <h1 class="toggle-arrow">&#8667;</h1>
                     </div>
                 </div>
             </section>
             <section id="search-stats-column">
                 <div id="search-bar">
-                    <form class="expanding-search-form">
+                    <form class="search-form">
                         <input class="search-input" id="global-search" type="search" placeholder="Search by name">
                         <button id="search-button" class="button search-button" type="button">
                             <img id="pokeball-button-image" src="pokeballalt.png" width="23" height="23">
@@ -84,6 +87,7 @@
             </section>
         </div>
     </div>
+    <script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
 </body>

@@ -10,7 +10,7 @@ body {
   height: 800px;
   display: flex;
   justify-content: center;
-  background-image: url("green-wall-crop.png");
+  background-image: url("green-wall-new.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -19,12 +19,12 @@ body {
   display: flex;
   width: 65%;
   justify-content: space-between;
-  padding-top: 11em; }
+  padding-top: 7em; }
 
 #avatar-frame {
   width: 24em;
   height: 24em;
-  background-image: url("stone2.png");
+  background-image: url("stone5.png");
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -38,7 +38,7 @@ body {
 #poke-name-frame {
   width: 24em;
   height: 4em;
-  background-image: url("stone2.png");
+  background-image: url("stone5.png");
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -48,7 +48,8 @@ body {
   #poke-name-frame #poke-name-screen {
     width: 23em;
     height: 3em;
-    background-color: #d1d4c9; }
+    background-image: url("grid.png");
+    background-position: center; }
   #poke-name-frame #poke-name {
     line-height: .4em;
     text-align: center; }
@@ -57,33 +58,34 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 1em; }
+  margin-top: .7em; }
   #toggler .toggle-frame {
-    width: 3.2em;
-    height: 3em;
-    background-image: url("stone2.png");
+    width: 3em;
+    height: 2.5em;
+    background-image: url("stone5.png");
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px; }
     #toggler .toggle-frame .toggle-arrow {
-      width: 2.2em;
       text-align: center;
-      background-color: #d1d4c9; }
-    #toggler .toggle-frame h2 {
-      margin: 0em; }
+      color: #d1d4c9;
+      cursor: pointer;
+      margin: 0em 0em .25em 0em;
+      font-size: 250%; }
 
 #search-bar {
   width: 340px;
-  background-image: url("stone2.png");
+  background-image: url("stone5.png");
   height: 50px;
   display: flex;
   align-items: center;
   border-radius: 5px; }
 
-.expanding-search-form {
-  padding-left: 7px; }
-  .expanding-search-form .search-input {
+.search-form {
+  padding-left: 7px;
+  color: black; }
+  .search-form .search-input {
     display: inline-block;
     float: left;
     height: 34px;
@@ -93,9 +95,9 @@ body {
     z-index: 2;
     border-radius: 0;
     padding-left: 2px;
-    background-color: #d1d4c9;
+    background-image: url("grid.png");
     font-family: 'Press Start 2P', cursive; }
-  .expanding-search-form .button {
+  .search-form .button {
     height: 34px;
     display: inline-block;
     float: left;
@@ -103,17 +105,17 @@ body {
     padding: 0 10px;
     color: #fff;
     border: 1px solid transparent;
-    background-image: url("stone2.png");
+    background-image: url("stone5.png");
     text-align: center;
     cursor: pointer; }
-    .expanding-search-form .button:hover {
+    .search-form .button:hover {
       background-color: #51475b; }
 
 #stats-pane-frame {
   margin-top: 1em;
   width: 31em;
-  height: 19.85em;
-  background-image: url("stone2.png");
+  height: 17.9em;
+  background-image: url("stone5.png");
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,14 +131,14 @@ body {
     width: 95%; }
     #stats-pane-frame #ability-screen-wrapper .ability-screen {
       height: 34px;
-      background-color: #d1d4c9;
+      background-image: url("grid.png");
       width: 14em;
       line-height: .4em;
       text-align: center; }
   #stats-pane-frame #stat-bar-screen {
     width: 28.7em;
     height: 9em;
-    background-color: #d1d4c9;
+    background-image: url("grid.png");
     display: flex;
     flex-direction: column;
     justify-content: space-evenly; }
@@ -158,7 +160,7 @@ body {
         flex-direction: row;
         justify-content: end; }
         #stats-pane-frame #stat-bar-screen .stat-bar .full-bar .animating-bar {
-          background-color: #24be16;
+          background-color: #d11c9b;
           height: 5px;
           width: 100%; }
         #stats-pane-frame #stat-bar-screen .stat-bar .full-bar .bar-fill {
@@ -173,5 +175,10 @@ body {
     width: 0%; }
   100% {
     width: 100%; } }
+iframe {
+  display: none; }
+
+audio {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

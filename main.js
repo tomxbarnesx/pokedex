@@ -72,7 +72,6 @@ let searchButton = document.getElementById("search-button");
 // axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/45.json")
 axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
     data = response.data;
-    console.log(data);
     let newPoke = new Pokemon (
         data.name,
         data.sprites.front_default,
@@ -91,6 +90,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
 //SEARCH
 
 searchButton.addEventListener("click", (event) => {
+    searchBeep.play();
     let searchInput = document.getElementsByClassName("search-input")[0].value;
     
     // axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/" + searchInput + ".json")
@@ -129,14 +129,17 @@ searchButton.addEventListener("click", (event) => {
     })
 });
 
-//TOGGLES
+//TOGGLES + SOUNDS
 
 let toggleLeft = document.getElementsByClassName("toggle-arrow")[0];
 let toggleRight = document.getElementsByClassName("toggle-arrow")[1];
+let beep = document.getElementById("toggle-beep");
+let searchBeep = document.getElementById("search-beep");
 
 let current = -1;
 
 toggleLeft.addEventListener("click", (event) => {
+        beep.play();
         current--;
         if (current < 0){
             
@@ -147,6 +150,7 @@ toggleLeft.addEventListener("click", (event) => {
 });
     
 toggleRight.addEventListener("click", (event) => {
+        beep.play();
         current++;
         if (current >= PokeTom.party.length){
             current = 0;

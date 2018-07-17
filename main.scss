@@ -4,7 +4,6 @@ body {
     background-color: black;
     margin: 0px;
     font-family: 'Press Start 2P', cursive;
-
 }
 
 $brand-color: #6A5D78;
@@ -12,7 +11,8 @@ $screen-color: #d1d4c9;
 $input-height: 34px;
 $border-radius: 5px;
 $border-color: #999;
-$background-image: url("stone2.png");
+$background-image: url("stone5.png");
+$screen-image: url("grid.png");
 
 // div:hover {
 //     border: red dotted 5px;
@@ -23,7 +23,7 @@ $background-image: url("stone2.png");
     height: 800px;
     display: flex;
     justify-content: center;
-    background-image: url("green-wall-crop.png");
+    background-image: url("green-wall-new.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,7 +33,7 @@ $background-image: url("stone2.png");
     display: flex;
     width: 65%;
     justify-content: space-between;
-    padding-top: 11em;
+    padding-top: 7em;
 }
 
 //Avatar-Screen + Header
@@ -50,7 +50,7 @@ $background-image: url("stone2.png");
     #avatar-screen {
         width: 22em;
         height: 22em;
-        background-image: url("grid.png");
+        background-image: $screen-image;
     }
 }
 
@@ -68,7 +68,9 @@ $background-image: url("stone2.png");
     #poke-name-screen {
         width: 23em;
         height: 3em;
-        background-color: $screen-color;
+        // background-color: $screen-color;
+        background-image: $screen-image;
+        background-position: center; 
     }
 
     #poke-name {
@@ -81,11 +83,11 @@ $background-image: url("stone2.png");
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 1em;
+    margin-top: .7em;
 
     .toggle-frame {
-        width: 3.2em;
-        height: 3em;
+        width: 3em;
+        height: 2.5em;
         background-image: $background-image;
         display: flex;
         align-items: center;
@@ -93,13 +95,11 @@ $background-image: url("stone2.png");
         border-radius: $border-radius;
 
         .toggle-arrow {
-            width: 2.2em;
             text-align: center;
-            background-color: $screen-color;
-        }    
-    
-        h2 {
-            margin: 0em;
+            color: $screen-color;
+            cursor: pointer;
+            margin: 0em 0em .25em 0em;
+            font-size: 250%;
         }
     }
 }
@@ -116,8 +116,9 @@ $background-image: url("stone2.png");
     // padding-right: 5em;
 }
 
-.expanding-search-form {
+.search-form {
     padding-left: 7px;
+    color: black;
 
     .search-input {
     display: inline-block;
@@ -129,7 +130,7 @@ $background-image: url("stone2.png");
     z-index: 2;
     border-radius: 0;
     padding-left: 2px;
-    background-color: $screen-color;
+    background-image: $screen-image;
     font-family: 'Press Start 2P', cursive;
     }
     
@@ -155,7 +156,8 @@ $background-image: url("stone2.png");
 #stats-pane-frame {
     margin-top: 1em;
     width: 31em;
-    height: 19.85em;
+    // height: 19.85em;
+    height: 17.9em;
     background-image: $background-image;
     display: flex;
     flex-direction: column;
@@ -177,7 +179,8 @@ $background-image: url("stone2.png");
     
         .ability-screen {
             height: $input-height;
-            background-color: $screen-color;
+            // background-color: $screen-color;
+            background-image: $screen-image;
             width: 14em;
             line-height: .4em;
             text-align: center;
@@ -188,7 +191,7 @@ $background-image: url("stone2.png");
     #stat-bar-screen {
         width: 28.7em;
         height: 9em;
-        background-color: $screen-color;
+        background-image: $screen-image;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -215,7 +218,7 @@ $background-image: url("stone2.png");
                 justify-content: end;
 
                 .animating-bar{
-                    background-color: #24be16;
+                    background-color: #d11c9b;
                     height: 5px;
                     width: 100%;
                     // animation: fill-zoom 2s forwards;
@@ -235,6 +238,8 @@ $background-image: url("stone2.png");
     }   
 }
 
+//EXTRAS + ANIMATIONS
+
 @keyframes fill-zoom {
     0% {
         width: 0%;
@@ -242,4 +247,12 @@ $background-image: url("stone2.png");
     100% {
         width: 100%;
     }
+}
+
+iframe {
+    display: none;
+}
+
+audio {
+    display: none;
 }
