@@ -9,6 +9,7 @@ class Trainer {
     
     add(poke) {
         this.party.push(poke);
+        current = this.party.length - 1;
     }
 }
 
@@ -47,11 +48,11 @@ let render = (targetPoke) => {
 
     let ATKBar = document.getElementsByClassName("bar-fill")[1];
     let ATKAnimation = document.getElementsByClassName("animating-bar")[1];
-    ATKBar.style.width = String(((190 - PokeTom.party[targetPoke].hp) / 190) * 100) + "%";
+    ATKBar.style.width = String(((190 - PokeTom.party[targetPoke].attack) / 190) * 100) + "%";
 
     let DEFBar = document.getElementsByClassName("bar-fill")[2];
     let DEFAnimation = document.getElementsByClassName("animating-bar")[2];
-    DEFBar.style.width = String(((230 - PokeTom.party[targetPoke].hp) / 230) * 100) + "%";
+    DEFBar.style.width = String(((230 - PokeTom.party[targetPoke].defense) / 230) * 100) + "%";
 
     HPAnimation.classList.add("filling");
     ATKAnimation.classList.add("filling");
@@ -60,7 +61,7 @@ let render = (targetPoke) => {
     setTimeout(function(){
         HPAnimation.classList.remove("filling");
         ATKAnimation.classList.remove("filling");
-        DEFAnimation.classList.remove("filling");}, 2000);
+        DEFAnimation.classList.remove("filling");}, 1600);
 }
 
 
@@ -68,9 +69,10 @@ let render = (targetPoke) => {
 
 let searchButton = document.getElementById("search-button");
 
-// axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/")
-axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/45.json").then((response) => {
+// axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/45.json")
+axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
     data = response.data;
+    console.log(data);
     let newPoke = new Pokemon (
         data.name,
         data.sprites.front_default,
@@ -91,8 +93,8 @@ axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/45.json").then((response
 searchButton.addEventListener("click", (event) => {
     let searchInput = document.getElementsByClassName("search-input")[0].value;
     
-    // axios.get("https://pokeapi.co/api/v2/pokemon/" + searchInput.toLowerCase() + "/")
-    axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/" + searchInput + ".json").then((response) => {
+    // axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/" + searchInput + ".json")
+    axios.get("https://pokeapi.co/api/v2/pokemon/" + searchInput.toLowerCase() + "/").then((response) => {
     data = response.data;
 
     if (data.abilities.length > 1){
@@ -124,36 +126,31 @@ searchButton.addEventListener("click", (event) => {
     let targetPoke = PokeTom.party.length - 1;
     render(targetPoke);
 
-    let current = PokeTom.party.length - 1;
-
-    toggleLeft.addEventListener("click", (event) => {
-        current--;
-        render(current);
-    });
-    
-    toggleRight.addEventListener("click", (event) => {
-        current++;
-        render(current);
-    });
-
     })
 });
 
 //TOGGLES
 
-// let toggleLeft = document.getElementsByClassName("toggle-arrow")[0];
-// let toggleRight = document.getElementsByClassName("toggle-arrow")[1];
+let toggleLeft = document.getElementsByClassName("toggle-arrow")[0];
+let toggleRight = document.getElementsByClassName("toggle-arrow")[1];
 
-// let current = PokeTom.party.length - 1;
+let current = -1;
 
-// toggleLeft.addEventListener("click", (event) => {
-//     current--;
-//     render(current);
-// });
-
-// toggleRight.addEventListener("click", (event) => {
-//     current++;
-//     render(current);
-// });
-
-//indexOf ++ // --
+toggleLeft.addEventListener("click", (event) => {
+        current--;
+        if (current < 0){
+            
+            current = PokeTom.party.length - 1;
+        }
+        render(current);
+        console.log(current);
+});
+    
+toggleRight.addEventListener("click", (event) => {
+        current++;
+        if (current >= PokeTom.party.length){
+            current = 0;
+        }
+        render(current);
+        console.log(current);
+});

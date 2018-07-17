@@ -166,7 +166,7 @@ body {
           height: 5px;
           width: 10em; }
         #stats-pane-frame #stat-bar-screen .stat-bar .full-bar .filling {
-          animation: fill-zoom 2s forwards; }
+          animation: fill-zoom 1.5s forwards; }
 
 @keyframes fill-zoom {
   0% {
