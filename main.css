@@ -53,8 +53,28 @@ body {
     line-height: .4em;
     text-align: center; }
 
+#toggler {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 1em; }
+  #toggler .toggle-frame {
+    width: 3.2em;
+    height: 3em;
+    background-image: url("stone2.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px; }
+    #toggler .toggle-frame .toggle-arrow {
+      width: 2.2em;
+      text-align: center;
+      background-color: #d1d4c9; }
+    #toggler .toggle-frame h2 {
+      margin: 0em; }
+
 #search-bar {
-  width: 330px;
+  width: 340px;
   background-image: url("stone2.png");
   height: 50px;
   display: flex;
@@ -62,12 +82,12 @@ body {
   border-radius: 5px; }
 
 .expanding-search-form {
-  padding-left: 5px; }
+  padding-left: 7px; }
   .expanding-search-form .search-input {
     display: inline-block;
     float: left;
     height: 34px;
-    width: 280px;
+    width: 285px;
     border: 0;
     font-size: 16px;
     z-index: 2;

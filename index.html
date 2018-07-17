@@ -11,7 +11,7 @@
 <body>
     <div id="the-view">
         <div id="the-dex">
-            <div id="view-column">
+            <section id="view-column">
                 <div id="avatar-frame">
                     <div id="avatar-screen">
                         <img id="avatar" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png" height="350" width="350">
@@ -22,8 +22,16 @@
                         <h1 id="poke-name"></h1> 
                     </div>
                 </div>
-            </div>
-            <div id="search-stats-column">
+                <div id="toggler">
+                    <div class="toggle-frame">
+                        <div class="toggle-arrow"><h2>&#8678;</h2></div> 
+                    </div>
+                    <div class="toggle-frame">
+                        <div class="toggle-arrow"><h2>&#8680;</h2></div>
+                    </div>
+                </div>
+            </section>
+            <section id="search-stats-column">
                 <div id="search-bar">
                     <form class="expanding-search-form">
                         <input class="search-input" id="global-search" type="search" placeholder="Search by name">
@@ -73,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
