@@ -79,7 +79,7 @@ let render = (targetPoke) => {
     ATKAnimation.classList.add("filling");
     DEFAnimation.classList.add("filling");
 
-    setTimeout(function(){
+    setTimeout(() => {
         HPAnimation.classList.remove("filling");
         ATKAnimation.classList.remove("filling");
         DEFAnimation.classList.remove("filling");}, 1600);
@@ -152,9 +152,23 @@ searchButton.addEventListener("click", (event) => {
 
 //DITTO CLICK
 
+let kingButton = document.getElementById("king-button");
 let dittoButton = document.getElementById("ditto");
 
-
+kingButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (dittoButton.style.display === "none"){
+    dittoButton.style.display = "block";
+    dittoButton.classList.add("rising");
+    } else {
+    dittoButton.classList.add("falling");
+    setTimeout(() => {
+        dittoButton.style.display = "none";
+        dittoButton.classList.remove("rising");
+        dittoButton.classList.remove("falling");
+    }, 1500)
+    }
+});
 
 dittoButton.addEventListener("click", (event) => {
     let randomizer = (min, max) => {
