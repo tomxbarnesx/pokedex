@@ -18,10 +18,6 @@ $border-color: #999;
 $background-image: url("stone5.png");
 $screen-image: url("grid.png");
 
-// div:hover {
-//     border: red dotted 5px;
-// }
-
 #the-view {
     width: 100%;
     height: 800px;
@@ -42,8 +38,8 @@ $screen-image: url("grid.png");
 
 //Avatar-Screen + Header
 #avatar-frame {
-    width: 25em;
-    height: 25em;
+    width: 24em;
+    height: 24em;
     background-image: $background-image;
     border-radius: $border-radius;
     display: flex;
@@ -52,14 +48,14 @@ $screen-image: url("grid.png");
     align-items: center;
 
     #avatar-screen {
-        width: 23em;
-        height: 23em;
+        width: 22em;
+        height: 22em;
         background-image: $screen-image;
     }
 }
 
 #poke-name-frame {
-    width: 25em;
+    width: 24em;
     height: 4em;
     background-image: $background-image;
     border-radius: $border-radius;
@@ -70,7 +66,7 @@ $screen-image: url("grid.png");
     margin-top: 1em;
 
     #poke-name-screen {
-        width: 24em;
+        width: 23em;
         height: 3em;
         // background-color: $screen-color;
         background-image: $screen-image;
@@ -144,8 +140,13 @@ $screen-image: url("grid.png");
 #top-shelf{
     display: flex;
     flex-direction: row;
+}
 
-    
+.btn-primary{
+    background-image: $background-image;
+    border: 0px;
+    margin-left: 2em;
+    color: $screen-color;
 }
 
 #search-bar {
@@ -158,11 +159,9 @@ $screen-image: url("grid.png");
     // padding-right: 5em;
 
     #info-button{
-        .btn-primary {
-            background-image: $background-image !important;
-            background-color: $brand-color;
+            background-image: $background-image;
+            background-color: $brand-color !important;
         }
-    }
 
     .search-form {
         padding-left: 7px;

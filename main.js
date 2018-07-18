@@ -26,10 +26,12 @@ class Pokemon {
     }
 }
 
-// $('#myModal').modal(options)
-
+//MODAL JQUERY SCRIPT
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+  
 //RENDER FUNCTION
-// let targetPoke = PokeTom.party.length - 1;
 
 let render = (targetPoke) => {
     let pokeNameDisplay = document.getElementById("poke-name");

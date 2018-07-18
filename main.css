@@ -26,8 +26,8 @@ body.noScroll {
   padding-top: 7em; }
 
 #avatar-frame {
-  width: 25em;
-  height: 25em;
+  width: 24em;
+  height: 24em;
   background-image: url("stone5.png");
   border-radius: 5px;
   display: flex;
@@ -35,12 +35,12 @@ body.noScroll {
   justify-content: center;
   align-items: center; }
   #avatar-frame #avatar-screen {
-    width: 23em;
-    height: 23em;
+    width: 22em;
+    height: 22em;
     background-image: url("grid.png"); }
 
 #poke-name-frame {
-  width: 25em;
+  width: 24em;
   height: 4em;
   background-image: url("stone5.png");
   border-radius: 5px;
@@ -50,7 +50,7 @@ body.noScroll {
   align-items: center;
   margin-top: 1em; }
   #poke-name-frame #poke-name-screen {
-    width: 24em;
+    width: 23em;
     height: 3em;
     background-image: url("grid.png");
     background-position: center;
@@ -105,6 +105,12 @@ body.noScroll {
   display: flex;
   flex-direction: row; }
 
+.btn-primary {
+  background-image: url("stone5.png");
+  border: 0px;
+  margin-left: 2em;
+  color: #d1d4c9; }
+
 #search-bar {
   width: 340px;
   background-image: url("stone5.png");
@@ -112,9 +118,9 @@ body.noScroll {
   display: flex;
   align-items: center;
   border-radius: 5px; }
-  #search-bar #info-button .btn-primary {
-    background-image: url("stone5.png") !important;
-    background-color: #6A5D78; }
+  #search-bar #info-button {
+    background-image: url("stone5.png");
+    background-color: #6A5D78 !important; }
   #search-bar .search-form {
     padding-left: 7px;
     color: black; }
