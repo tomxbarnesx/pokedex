@@ -154,6 +154,8 @@ searchButton.addEventListener("click", (event) => {
 
 let dittoButton = document.getElementById("ditto");
 
+
+
 dittoButton.addEventListener("click", (event) => {
     let randomizer = (min, max) => {
         min = Math.ceil(min);
@@ -163,8 +165,40 @@ dittoButton.addEventListener("click", (event) => {
 
     let randomPokeNum = randomizer(1, 807);
 
-    axios.get("https://pokeapi.co/api/v2/pokemon/" + searchInput.toLowerCase() + "/").then((response) => {
-})
+    axios.get("https://pokeapi.co/api/v2/pokemon/" + randomPokeNum + "/").then((response) => {
+        data = response.data;
+
+        if (data.abilities.length > 1){
+            let newPoke = new Pokemon (
+                data.name,
+                data.sprites.front_default,
+                data.stats[5].base_stat,
+                data.stats[4].base_stat,
+                data.stats[3].base_stat,
+                [data.abilities[0].ability.name.charAt(0).toUpperCase() + data.abilities[0].ability.name.slice(1), data.abilities[1].ability.name.charAt(0).toUpperCase() + data.abilities[1].ability.name.slice(1)]
+            )
+
+            PokeTom.add(newPoke);
+            PokeTom.all();
+
+        } else {
+            let newPoke = new Pokemon (
+                data.name,
+                data.sprites.front_default,
+                data.stats[5].base_stat,
+                data.stats[4].base_stat,
+                data.stats[3].base_stat,
+                [data.abilities[0].ability.name.charAt(0).toUpperCase() + data.abilities[0].ability.name.slice(1), "N/A"]
+            )
+
+            PokeTom.add(newPoke);
+            PokeTom.all();
+        }
+
+    let targetPoke = PokeTom.party.length - 1;
+    render(targetPoke);
+    })
+});
 
 //TOGGLES + SOUNDS
 

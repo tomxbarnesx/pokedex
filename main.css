@@ -79,11 +79,20 @@ body.noScroll {
       font-size: 250%; }
 
 #ditto-frame {
-  width: 3em;
-  height: 3em;
+  width: 4em;
+  height: 4em;
+  background-image: url("stone5.png");
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #ditto-frame a {
+    cursor: pointer;
+    color: #d1d4c9; }
+
+#ditto {
+  cursor: pointer;
   position: absolute;
-  bottom: 12em;
-  left: 43em; }
+  bottom: -4em; }
 
 #search-bar {
   width: 340px;
