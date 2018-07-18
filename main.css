@@ -53,9 +53,10 @@ body.noScroll {
     width: 23em;
     height: 3em;
     background-image: url("grid.png");
-    background-position: center; }
+    background-position: center;
+    overflow: hidden; }
   #poke-name-frame #poke-name {
-    line-height: .4em;
+    margin-top: .6em;
     text-align: center; }
 
 #toggler {

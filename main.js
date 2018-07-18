@@ -157,20 +157,22 @@ let dittoButton = document.getElementById("ditto");
 let dittoSound = document.getElementById("baby-talk");
 let dittoSound2 = document.getElementById("baby-talk-2");
 let bubble = document.getElementById("bubble-pop");
+let fanfare = document.getElementById("fanfare");
 
 kingButton.addEventListener("click", (event) => {
-    bubble.play();
     event.preventDefault();
     if (dittoButton.style.display === "none"){
-    dittoButton.style.display = "block";
-    dittoButton.classList.add("rising");
+        fanfare.play();
+        dittoButton.style.display = "block";
+        dittoButton.classList.add("rising");
     } else {
-    dittoButton.classList.add("falling");
-    setTimeout(() => {
-        dittoButton.style.display = "none";
-        dittoButton.classList.remove("rising");
-        dittoButton.classList.remove("falling");
-    }, 1500)
+        bubble.play();
+        dittoButton.classList.add("falling");
+        setTimeout(() => {
+            dittoButton.style.display = "none";
+            dittoButton.classList.remove("rising");
+            dittoButton.classList.remove("falling");
+        }, 1500)
     }
 });
 

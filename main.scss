@@ -74,12 +74,14 @@ $screen-image: url("grid.png");
         height: 3em;
         // background-color: $screen-color;
         background-image: $screen-image;
-        background-position: center; 
+        background-position: center;
+        overflow: hidden;
     }
 
     #poke-name {
-        line-height: .4em;
+        margin-top: .6em;
         text-align: center;
+
     }
 }
 
