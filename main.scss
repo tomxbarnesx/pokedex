@@ -6,6 +6,10 @@ body {
     font-family: 'Press Start 2P', cursive;
 }
 
+body.noScroll { /* ...or body.dialogShowing */
+    overflow: hidden;
+}
+
 $brand-color: #6A5D78;
 $screen-color: #d1d4c9;
 $input-height: 34px;
@@ -102,6 +106,15 @@ $screen-image: url("grid.png");
             font-size: 250%;
         }
     }
+}
+
+#ditto-frame {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    bottom: 12em;
+    left: 43em;
+    // visibility: hidden;
 }
 
 //Search-Bar & Stats

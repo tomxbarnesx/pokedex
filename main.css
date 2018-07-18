@@ -5,6 +5,10 @@ body {
   margin: 0px;
   font-family: 'Press Start 2P', cursive; }
 
+body.noScroll {
+  /* ...or body.dialogShowing */
+  overflow: hidden; }
+
 #the-view {
   width: 100%;
   height: 800px;
@@ -73,6 +77,13 @@ body {
       cursor: pointer;
       margin: 0em 0em .25em 0em;
       font-size: 250%; }
+
+#ditto-frame {
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  bottom: 12em;
+  left: 43em; }
 
 #search-bar {
   width: 340px;
