@@ -42,8 +42,8 @@ $screen-image: url("grid.png");
 
 //Avatar-Screen + Header
 #avatar-frame {
-    width: 24em;
-    height: 24em;
+    width: 25em;
+    height: 25em;
     background-image: $background-image;
     border-radius: $border-radius;
     display: flex;
@@ -52,14 +52,14 @@ $screen-image: url("grid.png");
     align-items: center;
 
     #avatar-screen {
-        width: 22em;
-        height: 22em;
+        width: 23em;
+        height: 23em;
         background-image: $screen-image;
     }
 }
 
 #poke-name-frame {
-    width: 24em;
+    width: 25em;
     height: 4em;
     background-image: $background-image;
     border-radius: $border-radius;
@@ -70,7 +70,7 @@ $screen-image: url("grid.png");
     margin-top: 1em;
 
     #poke-name-screen {
-        width: 23em;
+        width: 24em;
         height: 3em;
         // background-color: $screen-color;
         background-image: $screen-image;
@@ -79,7 +79,7 @@ $screen-image: url("grid.png");
     }
 
     #poke-name {
-        margin-top: .6em;
+        margin-top: .5em;
         text-align: center;
 
     }
@@ -104,7 +104,7 @@ $screen-image: url("grid.png");
             text-align: center;
             color: $screen-color;
             cursor: pointer;
-            margin: 0em 0em .25em 0em;
+            margin: 0em 0em .48em 0em;
             font-size: 250%;
         }
     }
@@ -124,7 +124,7 @@ $screen-image: url("grid.png");
     #king-button{
         cursor: pointer;
         color: $screen-color;
-        margin: 0em 0em .2em 0em;
+        margin: 0em 0em .4em 0em;
     }
 }
 
@@ -141,6 +141,13 @@ $screen-image: url("grid.png");
 
 //Search-Bar & Stats
 
+#top-shelf{
+    display: flex;
+    flex-direction: row;
+
+    
+}
+
 #search-bar {
     width: 340px;
     background-image: $background-image;
@@ -149,43 +156,51 @@ $screen-image: url("grid.png");
     align-items: center;
     border-radius: $border-radius;
     // padding-right: 5em;
-}
 
-.search-form {
-    padding-left: 7px;
-    color: black;
-
-    .search-input {
-    display: inline-block;
-    float: left;
-    height: $input-height;
-    width: 285px;
-    border: 0;
-    font-size: 16px;
-    z-index: 2;
-    border-radius: 0;
-    padding-left: 2px;
-    background-image: $screen-image;
-    font-family: 'Press Start 2P', cursive;
+    #info-button{
+        .btn-primary {
+            background-image: $background-image !important;
+            background-color: $brand-color;
+        }
     }
+
+    .search-form {
+        padding-left: 7px;
+        color: black;
     
-    .button {
-    height: $input-height;
-    display: inline-block;
-    float: left;
-    top: 0;
-    padding: 0 10px;
-    color: #fff;
-    border: 1px solid transparent;
-    background-image: $background-image;
-    text-align: center;
-    cursor: pointer;
-      
-      &:hover {
-        background-color: darken($brand-color, 10%);
+        .search-input {
+        display: inline-block;
+        float: left;
+        height: $input-height;
+        width: 285px;
+        border: 0;
+        font-size: 16px;
+        z-index: 2;
+        border-radius: 0;
+        padding-left: 2px;
+        background-image: $screen-image;
+        font-family: 'Press Start 2P', cursive;
+        }
+        
+        .button {
+        height: $input-height;
+        display: inline-block;
+        float: left;
+        top: 0;
+        padding: 0 10px;
+        color: #fff;
+        border: 1px solid transparent;
+        background-image: $background-image;
+        text-align: center;
+        cursor: pointer;
+          
+          &:hover {
+            background-color: darken($brand-color, 10%);
+            }
         }
     }
 }
+
 
 //STAT-PANE
 #stats-pane-frame {
@@ -220,12 +235,17 @@ $screen-image: url("grid.png");
             line-height: .4em;
             text-align: center;
             // margin-top: 1em;
+
+        .ability-display {
+            margin-bottom: 0;
+            margin-top: 1rem;
+        }
         }
     }
 
     #stat-bar-screen {
         width: 28.7em;
-        height: 9em;
+        height: 8em;
         background-image: $screen-image;
         display: flex;
         flex-direction: column;
@@ -308,4 +328,21 @@ iframe {
 
 audio {
     display: none;
+}
+
+//BOOTSTRAP OVERRIDES
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.15rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
 }

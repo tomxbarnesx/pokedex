@@ -26,6 +26,7 @@ class Pokemon {
     }
 }
 
+// $('#myModal').modal(options)
 
 //RENDER FUNCTION
 // let targetPoke = PokeTom.party.length - 1;

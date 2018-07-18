@@ -26,8 +26,8 @@ body.noScroll {
   padding-top: 7em; }
 
 #avatar-frame {
-  width: 24em;
-  height: 24em;
+  width: 25em;
+  height: 25em;
   background-image: url("stone5.png");
   border-radius: 5px;
   display: flex;
@@ -35,12 +35,12 @@ body.noScroll {
   justify-content: center;
   align-items: center; }
   #avatar-frame #avatar-screen {
-    width: 22em;
-    height: 22em;
+    width: 23em;
+    height: 23em;
     background-image: url("grid.png"); }
 
 #poke-name-frame {
-  width: 24em;
+  width: 25em;
   height: 4em;
   background-image: url("stone5.png");
   border-radius: 5px;
@@ -50,13 +50,13 @@ body.noScroll {
   align-items: center;
   margin-top: 1em; }
   #poke-name-frame #poke-name-screen {
-    width: 23em;
+    width: 24em;
     height: 3em;
     background-image: url("grid.png");
     background-position: center;
     overflow: hidden; }
   #poke-name-frame #poke-name {
-    margin-top: .6em;
+    margin-top: .5em;
     text-align: center; }
 
 #toggler {
@@ -76,7 +76,7 @@ body.noScroll {
       text-align: center;
       color: #d1d4c9;
       cursor: pointer;
-      margin: 0em 0em .25em 0em;
+      margin: 0em 0em .48em 0em;
       font-size: 250%; }
 
 #ditto-frame {
@@ -90,7 +90,7 @@ body.noScroll {
   #ditto-frame #king-button {
     cursor: pointer;
     color: #d1d4c9;
-    margin: 0em 0em .2em 0em; }
+    margin: 0em 0em .4em 0em; }
 
 #ditto {
   cursor: pointer; }
@@ -101,6 +101,10 @@ body.noScroll {
 .falling {
   animation: fall 1.5s forwards; }
 
+#top-shelf {
+  display: flex;
+  flex-direction: row; }
+
 #search-bar {
   width: 340px;
   background-image: url("stone5.png");
@@ -108,35 +112,37 @@ body.noScroll {
   display: flex;
   align-items: center;
   border-radius: 5px; }
-
-.search-form {
-  padding-left: 7px;
-  color: black; }
-  .search-form .search-input {
-    display: inline-block;
-    float: left;
-    height: 34px;
-    width: 285px;
-    border: 0;
-    font-size: 16px;
-    z-index: 2;
-    border-radius: 0;
-    padding-left: 2px;
-    background-image: url("grid.png");
-    font-family: 'Press Start 2P', cursive; }
-  .search-form .button {
-    height: 34px;
-    display: inline-block;
-    float: left;
-    top: 0;
-    padding: 0 10px;
-    color: #fff;
-    border: 1px solid transparent;
-    background-image: url("stone5.png");
-    text-align: center;
-    cursor: pointer; }
-    .search-form .button:hover {
-      background-color: #51475b; }
+  #search-bar #info-button .btn-primary {
+    background-image: url("stone5.png") !important;
+    background-color: #6A5D78; }
+  #search-bar .search-form {
+    padding-left: 7px;
+    color: black; }
+    #search-bar .search-form .search-input {
+      display: inline-block;
+      float: left;
+      height: 34px;
+      width: 285px;
+      border: 0;
+      font-size: 16px;
+      z-index: 2;
+      border-radius: 0;
+      padding-left: 2px;
+      background-image: url("grid.png");
+      font-family: 'Press Start 2P', cursive; }
+    #search-bar .search-form .button {
+      height: 34px;
+      display: inline-block;
+      float: left;
+      top: 0;
+      padding: 0 10px;
+      color: #fff;
+      border: 1px solid transparent;
+      background-image: url("stone5.png");
+      text-align: center;
+      cursor: pointer; }
+      #search-bar .search-form .button:hover {
+        background-color: #51475b; }
 
 #stats-pane-frame {
   margin-top: 1em;
@@ -162,9 +168,12 @@ body.noScroll {
       width: 14em;
       line-height: .4em;
       text-align: center; }
+      #stats-pane-frame #ability-screen-wrapper .ability-screen .ability-display {
+        margin-bottom: 0;
+        margin-top: 1rem; }
   #stats-pane-frame #stat-bar-screen {
     width: 28.7em;
-    height: 9em;
+    height: 8em;
     background-image: url("grid.png");
     display: flex;
     flex-direction: column;
@@ -217,5 +226,14 @@ iframe {
 
 audio {
   display: none; }
+
+h1 {
+  font-size: 1.5rem; }
+
+h2 {
+  font-size: 1.15rem; }
+
+h3 {
+  font-size: 1.3rem; }
 
 /*# sourceMappingURL=main.css.map */

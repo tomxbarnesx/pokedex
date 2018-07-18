@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pokedex</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
     <div id="the-view">
@@ -44,13 +44,37 @@
                 </div>
             </section>
             <section id="search-stats-column">
-                <div id="search-bar">
-                    <form class="search-form">
-                        <input class="search-input" id="global-search" type="search" placeholder="Search by name">
-                        <button id="search-button" class="button search-button" type="button">
-                            <img id="pokeball-button-image" src="pokeballalt.png" width="23" height="23">
-                        </button>
-                    </form>
+                <div id="top-shelf">
+                    <div id="search-bar">
+                        <form class="search-form">
+                            <input class="search-input" id="global-search" type="search" placeholder="Search by name">
+                            <button id="search-button" class="button search-button" type="button">
+                                <img id="pokeball-button-image" src="pokeballalt.png" width="23" height="23">
+                            </button>
+                        </form>
+                    </div>
+                    <button type="button" id="info-button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Info
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                      
                 </div>
                 <div id="stats-pane-frame">
                     <h3 class="stat-header">Abilities:</h3>
@@ -97,6 +121,7 @@
             </section>
         </div>
     </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
 </body>
