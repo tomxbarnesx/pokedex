@@ -150,12 +150,16 @@ searchButton.addEventListener("click", (event) => {
     })
 });
 
-//DITTO CLICK
+//DITTO
 
 let kingButton = document.getElementById("king-button");
 let dittoButton = document.getElementById("ditto");
+let dittoSound = document.getElementById("baby-talk");
+let dittoSound2 = document.getElementById("baby-talk-2");
+let bubble = document.getElementById("bubble-pop");
 
 kingButton.addEventListener("click", (event) => {
+    bubble.play();
     event.preventDefault();
     if (dittoButton.style.display === "none"){
     dittoButton.style.display = "block";
@@ -170,7 +174,18 @@ kingButton.addEventListener("click", (event) => {
     }
 });
 
+let playCount = 1;
+
 dittoButton.addEventListener("click", (event) => {
+    
+    if (playCount % 2 === 0){
+        dittoSound2.play();
+        playCount++;
+    } else {
+        dittoSound.play();
+        playCount++;
+    };
+
     let randomizer = (min, max) => {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -214,7 +229,7 @@ dittoButton.addEventListener("click", (event) => {
     })
 });
 
-//TOGGLES + SOUNDS
+//TOGGLES
 
 let toggleLeft = document.getElementsByClassName("toggle-arrow")[0];
 let toggleRight = document.getElementsByClassName("toggle-arrow")[1];
