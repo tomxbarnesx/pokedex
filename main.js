@@ -46,7 +46,11 @@ let DEFAnimation = document.getElementsByClassName("animating-bar")[2];
 //-----------------------RENDER FUNCTION-------------------------------
 
 let render = (targetPoke) => {
-    pokeNameDisplay.innerText = PokeTom.party[targetPoke].name;
+    let pokeName = PokeTom.party[targetPoke].name
+    if (pokeName.includes("-")){
+        pokeName = pokeName.slice(0, pokeName.indexOf("-"));
+    }
+    pokeNameDisplay.innerText = pokeName;
 
     avatarDisplay.src = PokeTom.party[targetPoke].avatar;
     avatarDisplay.height = "350";
