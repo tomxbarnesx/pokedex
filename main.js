@@ -176,7 +176,6 @@ let dittoButton = document.getElementById("ditto");
 let dittoSound = document.getElementById("baby-talk");
 let dittoSound2 = document.getElementById("baby-talk-2");
 let bubble = document.getElementById("bubble-pop");
-let fanfare = document.getElementById("fanfare");
 
 kingButton.addEventListener("click", (event) => {
     event.preventDefault();
