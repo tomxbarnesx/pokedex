@@ -32,6 +32,7 @@ $('#myModal').on('shown.bs.modal', function () {
   })
   
 //----------------------RENDER DEFINITIONS----------------------------
+
 let pokeNameDisplay = document.getElementById("poke-name");
 let avatarDisplay = document.getElementById("avatar");
 let abilityDisplay1 = document.getElementsByClassName("ability-display")[0];
@@ -59,7 +60,6 @@ let render = (targetPoke) => {
     let ability1 = PokeTom.party[targetPoke].abilities[0];
     if(ability1.includes("-")){
         let abilityArray = ability1.split("");
-        console.log(abilityArray.indexOf("-") + 1);
         abilityArray.splice(ability1.indexOf("-"), 1, " ");
         ability1 = abilityArray.join("");
         abilityLetter = ability1.charAt(ability1.indexOf(" ") + 1).toUpperCase();
@@ -69,7 +69,6 @@ let render = (targetPoke) => {
     let ability2 = PokeTom.party[targetPoke].abilities[1];
     if(ability2.includes("-")){
         let abilityArray = ability2.split("");
-        console.log(abilityArray.indexOf("-") + 1);
         abilityArray.splice(ability2.indexOf("-"), 1, " ");
         ability2 = abilityArray.join("");
         abilityLetter = ability2.charAt(ability2.indexOf(" ") + 1).toUpperCase();
@@ -121,6 +120,7 @@ axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
 //------------------------SEARCH-------------------------------
 
 searchButton.addEventListener("click", (event) => {
+    event.preventDefault();
     searchBeep.play();
     
     //LOADING:
@@ -166,8 +166,17 @@ searchButton.addEventListener("click", (event) => {
     let targetPoke = PokeTom.party.length - 1;
     render(targetPoke);
 
-    })
+    }).catch((error) => {
+        alert("ERROR. 404. Check your spelling.");
+    });
 });
+
+window.addEventListener("keyup", (event) => {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      searchButton.click();
+    }
+  });
 
 //-----------------DITTO------------------------------
 
@@ -201,7 +210,7 @@ kingButton.addEventListener("click", (event) => {
 let playCount = 1;
 
 dittoButton.addEventListener("click", (event) => {
-    
+    event.preventDefault();
     if (playCount % 2 === 0){
         dittoSound2.play();
         playCount++;
@@ -271,6 +280,7 @@ let searchBeep = document.getElementById("search-beep");
 let current = -1;
 
 toggleLeft.addEventListener("click", (event) => {
+        event.preventDefault();
         beep.play();
         current--;
         if (current < 0){
@@ -282,6 +292,7 @@ toggleLeft.addEventListener("click", (event) => {
 });
     
 toggleRight.addEventListener("click", (event) => {
+        event.preventDefault();
         beep.play();
         current++;
         if (current >= PokeTom.party.length){
@@ -290,3 +301,17 @@ toggleRight.addEventListener("click", (event) => {
         render(current);
         console.log(current);
 });
+
+window.addEventListener("keyup", (event) => {
+    event.preventDefault();
+    if (event.keyCode === 37) {
+      toggleLeft.click();
+    }
+  });
+
+  window.addEventListener("keyup", (event) => {
+    event.preventDefault();
+    if (event.keyCode === 39) {
+      toggleRight.click();
+    }
+  });
