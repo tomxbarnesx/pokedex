@@ -258,7 +258,7 @@ $screen-image: url("grid.png");
         justify-content: space-evenly;
 
         .stat-bar {
-            padding-left: 1em;
+            padding-left: .8em;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -273,7 +273,7 @@ $screen-image: url("grid.png");
             .full-bar{
                 background-color: black;
                 height: 5px;
-                width: 21em;
+                width: 22.8em;
                 display: flex;
                 flex-direction: row;
                 justify-content: end;

@@ -192,7 +192,7 @@ body.noScroll {
     flex-direction: column;
     justify-content: space-evenly; }
     #stats-pane-frame #stat-bar-screen .stat-bar {
-      padding-left: 1em;
+      padding-left: .8em;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -204,7 +204,7 @@ body.noScroll {
       #stats-pane-frame #stat-bar-screen .stat-bar .full-bar {
         background-color: black;
         height: 5px;
-        width: 21em;
+        width: 22.8em;
         display: flex;
         flex-direction: row;
         justify-content: end; }
