@@ -197,7 +197,7 @@ $screen-image: url("grid.png");
         cursor: pointer;
           
           &:hover {
-            background-color: darken($brand-color, 10%);
+            animation: poke-flash 2s infinite;
             }
         }
     }
@@ -326,22 +326,19 @@ $screen-image: url("grid.png");
 
 @keyframes flash {
     0% {
-        color: #d11c9b
-    }
-    20% {
         color: #1cd1d1
     } 
-    40% {
+    25% {
         color: #1cd11c
     }
-    60%{
+    50%{
         color: #d1c51c
     }
-    80%{
+    75%{
         color: #d1741c
     }
     100% {
-        color: #d11c1c
+        color: #d11c9b
     }
 }
 
