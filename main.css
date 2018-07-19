@@ -37,7 +37,11 @@ body.noScroll {
   #avatar-frame #avatar-screen {
     width: 22em;
     height: 22em;
-    background-image: url("grid.png"); }
+    background-image: url("grid.png");
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
 
 #poke-name-frame {
   width: 24em;

@@ -51,6 +51,10 @@ $screen-image: url("grid.png");
         width: 22em;
         height: 22em;
         background-image: $screen-image;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 }
 
