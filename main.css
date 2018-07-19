@@ -72,12 +72,15 @@ body.noScroll {
     align-items: center;
     justify-content: center;
     border-radius: 5px; }
-    #toggler .toggle-frame .toggle-arrow {
+    #toggler .toggle-frame .toggle-button {
       text-align: center;
       color: #d1d4c9;
       cursor: pointer;
       margin: 0em 0em .48em 0em;
       font-size: 250%; }
+
+.toggle-button:hover {
+  animation: flash 2s infinite; }
 
 #ditto-frame {
   width: 2.5em;
@@ -111,6 +114,9 @@ body.noScroll {
   margin-left: 2em;
   color: #d1d4c9; }
 
+.btn-primary:hover {
+  animation: flash 2s infinite; }
+
 #search-bar {
   width: 340px;
   background-image: url("stone5.png");
@@ -118,9 +124,6 @@ body.noScroll {
   display: flex;
   align-items: center;
   border-radius: 5px; }
-  #search-bar #info-button {
-    background-image: url("stone5.png");
-    background-color: #6A5D78 !important; }
   #search-bar .search-form {
     padding-left: 7px;
     color: black; }
@@ -227,6 +230,28 @@ body.noScroll {
     margin-top: 4em; }
   100% {
     margin-top: 24em; } }
+@keyframes flash {
+  0% {
+    color: #d11c9b; }
+  20% {
+    color: #1cd1d1; }
+  40% {
+    color: #1cd11c; }
+  60% {
+    color: #d1c51c; }
+  80% {
+    color: #d1741c; }
+  100% {
+    color: #d11c1c; } }
+@keyframes poke-flash {
+  0% {
+    filter: hue-rotate(90deg); }
+  33% {
+    filter: hue-rotate(180deg); }
+  66% {
+    filter: hue-rotate(270deg); }
+  100% {
+    filter: hue-rotate(360deg); } }
 iframe {
   display: none; }
 

@@ -96,7 +96,7 @@ $screen-image: url("grid.png");
         justify-content: center;
         border-radius: $border-radius;
 
-        .toggle-arrow {
+        .toggle-button {
             text-align: center;
             color: $screen-color;
             cursor: pointer;
@@ -104,6 +104,10 @@ $screen-image: url("grid.png");
             font-size: 250%;
         }
     }
+}
+
+.toggle-button:hover{
+    animation: flash 2s infinite;
 }
 
 //DITTO-DESIGN
@@ -149,6 +153,10 @@ $screen-image: url("grid.png");
     color: $screen-color;
 }
 
+.btn-primary:hover {
+    animation: flash 2s infinite;
+}
+
 #search-bar {
     width: 340px;
     background-image: $background-image;
@@ -157,11 +165,6 @@ $screen-image: url("grid.png");
     align-items: center;
     border-radius: $border-radius;
     // padding-right: 5em;
-
-    #info-button{
-            background-image: $background-image;
-            background-color: $brand-color !important;
-        }
 
     .search-form {
         padding-left: 7px;
@@ -318,6 +321,42 @@ $screen-image: url("grid.png");
     }
     100% {
         margin-top: 24em;
+    }
+}
+
+@keyframes flash {
+    0% {
+        color: #d11c9b
+    }
+    20% {
+        color: #1cd1d1
+    } 
+    40% {
+        color: #1cd11c
+    }
+    60%{
+        color: #d1c51c
+    }
+    80%{
+        color: #d1741c
+    }
+    100% {
+        color: #d11c1c
+    }
+}
+
+@keyframes poke-flash {
+    0% {
+        filter: hue-rotate(90deg) 
+    }
+    33% {
+        filter: hue-rotate(180deg) 
+    }
+    66% {
+        filter: hue-rotate(270deg)
+    }
+    100% {
+        filter: hue-rotate(360deg)
     }
 }
 

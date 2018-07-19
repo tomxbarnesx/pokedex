@@ -68,15 +68,15 @@ let render = (targetPoke) => {
 
     let HPBar = document.getElementsByClassName("bar-fill")[0];
     let HPAnimation = document.getElementsByClassName("animating-bar")[0];
-    HPBar.style.width = String(((255 - PokeTom.party[targetPoke].hp) / 255) * 100) + "%";
+    HPBar.style.width = String(((319 - PokeTom.party[targetPoke].hp) / 319) * 100) + "%";
 
     let ATKBar = document.getElementsByClassName("bar-fill")[1];
     let ATKAnimation = document.getElementsByClassName("animating-bar")[1];
-    ATKBar.style.width = String(((190 - PokeTom.party[targetPoke].attack) / 190) * 100) + "%";
+    ATKBar.style.width = String(((238 - PokeTom.party[targetPoke].attack) / 238) * 100) + "%";
 
     let DEFBar = document.getElementsByClassName("bar-fill")[2];
     let DEFAnimation = document.getElementsByClassName("animating-bar")[2];
-    DEFBar.style.width = String(((230 - PokeTom.party[targetPoke].defense) / 230) * 100) + "%";
+    DEFBar.style.width = String(((288 - PokeTom.party[targetPoke].defense) / 288) * 100) + "%";
 
     HPAnimation.classList.add("filling");
     ATKAnimation.classList.add("filling");
@@ -165,7 +165,7 @@ let fanfare = document.getElementById("fanfare");
 kingButton.addEventListener("click", (event) => {
     event.preventDefault();
     if (dittoButton.style.display === "none"){
-        fanfare.play();
+        bubble.play();
         dittoButton.style.display = "block";
         dittoButton.classList.add("rising");
     } else {
