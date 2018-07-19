@@ -175,6 +175,7 @@ let kingButton = document.getElementById("king-button");
 let dittoButton = document.getElementById("ditto");
 let dittoSound = document.getElementById("baby-talk");
 let dittoSound2 = document.getElementById("baby-talk-2");
+let dittoTalk = document.getElementById("ditto-talk");
 let bubble = document.getElementById("bubble-pop");
 
 kingButton.addEventListener("click", (event) => {
@@ -183,6 +184,9 @@ kingButton.addEventListener("click", (event) => {
         bubble.play();
         dittoButton.style.display = "block";
         dittoButton.classList.add("rising");
+        setTimeout(() => {
+            dittoTalk.play();
+        }, 500)
     } else {
         bubble.play();
         dittoButton.classList.add("falling");
