@@ -11,13 +11,27 @@ class Trainer {
         this.party.push(poke);
         current = this.party.length - 1;
     }
+
+    get(poke) {
+        // let poke_get = this.party.find(o => o.name === poke.to_s);
+        // console.log(poke_get);
+            for (let i=0; i < this.party.length; i++) {
+                if (this.party[i].name === poke) {
+                    return this.party[i];
+            }
+        }
+    }
+        
 }
+
+// a method named get that accepts 1 parameter called name and returns a Pokemon object housing information for the Pokemon it found.
 
 let PokeTom = new Trainer();
 
 class Pokemon {
     constructor(name, avatar, hp, attack, defense, abilities) {
-        this.name = name.charAt(0).toUpperCase() + name.slice(1);
+        this.name = name
+        // this.name = name.charAt(0).toUpperCase() + name.slice(1);
         this.avatar = avatar;
         this.hp = hp;
         this.attack = attack;
@@ -97,7 +111,7 @@ let render = (targetPoke) => {
 let searchButton = document.getElementById("search-button");
 
 // axios.get("https://pokeapi-nycda.firebaseio.com/pokemon/45.json")
-axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
+let init_pull = (poke) => {axios.get("https://pokeapi.co/api/v2/pokemon/" + poke + "/").then((response) => {
     data = response.data;
     let newPoke = new Pokemon (
         data.name,
@@ -111,8 +125,11 @@ axios.get("https://pokeapi.co/api/v2/pokemon/vileplume/").then((response) => {
 
     let targetPoke = PokeTom.party.length - 1;
     render(targetPoke);
-});
+})};
 
+init_pull("vileplume");
+init_pull("venusaur");
+init_pull("muk");
 
 //------------------------SEARCH-------------------------------
 
